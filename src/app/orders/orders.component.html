@@ -1,3 +1,244 @@
-<p>
-  orders works!
-</p>
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    Traffic &amp; Sales
+                </div>
+                <div class="card-block">
+                    <table class="table table-hover table-outline m-b-0 hidden-sm-down">
+                        <thead class="thead-default">
+                            <tr>
+                                <th class="text-xs-center"><i class="icon-people"></i>
+                                </th>
+                                <th>Invoice #</th>
+                                <th>Status</th>
+                                <th>Channel</th>
+                                <th>User</th>
+                                <th>Address</th>
+                                <th>Delivery Fee</th>
+                                <th>Tracking Number</th>
+                                <th>Carrier</th>
+                                <th>Payment Method</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of orders">
+                                <td class="text-xs-center">
+                                    <div class="avatar">
+                                        <img src="assets/img/avatars/1.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                                        <span class="avatar-status tag-success"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>{{order.id}}</div>
+                                </td>
+                                <td class="text-xs-center">
+                                    <div>{{order.status}}</div>
+                                </td>
+                                <td>
+                                    <div>{{order.distribution_channel}}</div>
+                                </td>
+                                <td>
+                                    <div>Firstname Lastname</div>
+                                </td>
+                                <td>
+                                    <div class="small text-muted">{{order.address}}</div>
+                                </td>
+                                <td>
+                                    <div>{{order.delivery_fee}}</div>
+                                </td>
+                                <td>
+                                    <div>{{order.tracking_number}}</div>
+                                </td>
+                                <td>
+                                    <div>{{order.carrier_code}}</div>
+                                </td>
+                                <td>
+                                  <img src="http://southrosedale.org/wp-content/uploads/2014/12/interac-email-transfer-logo.png" class="text-xs-center" height="40px">
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <td class="text-xs-center">
+                                    <div class="avatar">
+                                        <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                                        <span class="avatar-status tag-danger"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>Avram Tarasios</div>
+                                    <div class="small text-muted">
+                                        <span>Recurring</span>| Registered: Jan 1, 2015
+                                    </div>
+                                </td>
+                                <td class="text-xs-center">
+                                    <img src="assets/img/flags/Brazil.png" alt="Brazil" style="height:24px;">
+                                </td>
+                                <td>
+                                    <div class="clearfix">
+                                        <div class="pull-left">
+                                            <strong>10%</strong>
+                                        </div>
+                                        <div class="pull-right">
+                                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                        </div>
+                                    </div>
+                                    <progress class="progress progress-xs progress-info" value="10" max="100" style="margin:5px 0 0 0;">10%</progress>
+                                </td>
+                                <td class="text-xs-center">
+                                    <i class="fa fa-cc-visa" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    <div class="small text-muted">Last login</div>
+                                    <strong>5 minutes ago</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-xs-center">
+                                    <div class="avatar">
+                                        <img src="assets/img/avatars/3.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                                        <span class="avatar-status tag-warning"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>Quintin Ed</div>
+                                    <div class="small text-muted">
+                                        <span>New</span>| Registered: Jan 1, 2015
+                                    </div>
+                                </td>
+                                <td class="text-xs-center">
+                                    <img src="assets/img/flags/India.png" alt="India" style="height:24px;">
+                                </td>
+                                <td>
+                                    <div class="clearfix">
+                                        <div class="pull-left">
+                                            <strong>74%</strong>
+                                        </div>
+                                        <div class="pull-right">
+                                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                        </div>
+                                    </div>
+                                    <progress class="progress progress-xs progress-warning" value="74" max="100" style="margin:5px 0 0 0;">74%</progress>
+                                </td>
+                                <td class="text-xs-center">
+                                    <i class="fa fa-cc-stripe" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    <div class="small text-muted">Last login</div>
+                                    <strong>1 hour ago</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-xs-center">
+                                    <div class="avatar">
+                                        <img src="assets/img/avatars/4.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                                        <span class="avatar-status tag-default"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>Enéas Kwadwo</div>
+                                    <div class="small text-muted">
+                                        <span>New</span>| Registered: Jan 1, 2015
+                                    </div>
+                                </td>
+                                <td class="text-xs-center">
+                                    <img src="assets/img/flags/France.png" alt="France" style="height:24px;">
+                                </td>
+                                <td>
+                                    <div class="clearfix">
+                                        <div class="pull-left">
+                                            <strong>98%</strong>
+                                        </div>
+                                        <div class="pull-right">
+                                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                        </div>
+                                    </div>
+                                    <progress class="progress progress-xs progress-danger" value="98" max="100" style="margin:5px 0 0 0;">98%</progress>
+                                </td>
+                                <td class="text-xs-center">
+                                    <i class="fa fa-paypal" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    <div class="small text-muted">Last login</div>
+                                    <strong>Last month</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-xs-center">
+                                    <div class="avatar">
+                                        <img src="assets/img/avatars/5.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                                        <span class="avatar-status tag-success"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>Agapetus Tadeáš</div>
+                                    <div class="small text-muted">
+                                        <span>New</span>| Registered: Jan 1, 2015
+                                    </div>
+                                </td>
+                                <td class="text-xs-center">
+                                    <img src="assets/img/flags/Spain.png" alt="Spain" style="height:24px;">
+                                </td>
+                                <td>
+                                    <div class="clearfix">
+                                        <div class="pull-left">
+                                            <strong>22%</strong>
+                                        </div>
+                                        <div class="pull-right">
+                                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                        </div>
+                                    </div>
+                                    <progress class="progress progress-xs progress-info" value="22" max="100" style="margin:5px 0 0 0;">22%</progress>
+                                </td>
+                                <td class="text-xs-center">
+                                    <i class="fa fa-google-wallet" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    <div class="small text-muted">Last login</div>
+                                    <strong>Last week</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-xs-center">
+                                    <div class="avatar">
+                                        <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                                        <span class="avatar-status tag-danger"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>Friderik Dávid</div>
+                                    <div class="small text-muted">
+                                        <span>New</span>| Registered: Jan 1, 2015
+                                    </div>
+                                </td>
+                                <td class="text-xs-center">
+                                    <img src="assets/img/flags/Poland.png" alt="Poland" style="height:24px;">
+                                </td>
+                                <td>
+                                    <div class="clearfix">
+                                        <div class="pull-left">
+                                            <strong>43%</strong>
+                                        </div>
+                                        <div class="pull-right">
+                                            <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                        </div>
+                                    </div>
+                                    <progress class="progress progress-xs progress-success" value="43" max="100" style="margin:5px 0 0 0;">43%</progress>
+                                </td>
+                                <td class="text-xs-center">
+                                    <i class="fa fa-cc-amex" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    <div class="small text-muted">Last login</div>
+                                    <strong>Yesterday</strong>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--/.col-->
+    </div>
+    <!--/.row-->
+</div>

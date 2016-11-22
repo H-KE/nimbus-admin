@@ -75,8 +75,6 @@ export class MobileSidebarToggleDirective {
         $event.preventDefault();
 
         this.toggleClass(document.querySelector('body'), 'mobile-open');
-
-        console.log('asdasdasd');
     }
 }
 

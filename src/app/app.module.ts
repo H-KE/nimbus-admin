@@ -3,6 +3,8 @@ import { BrowserModule }                from '@angular/platform-browser';
 import { LocationStrategy,
          HashLocationStrategy }         from '@angular/common';
 
+import { HttpModule }                   from '@angular/http';
+
 import { AppComponent }                 from './app.component';
 import { Ng2BootstrapModule }           from 'ng2-bootstrap/ng2-bootstrap';
 import { NAV_DROPDOWN_DIRECTIVES }      from './shared/nav-dropdown.directive';
@@ -18,14 +20,15 @@ import { AppRoutingModule }             from './app.routing';
 //Layouts
 import { FullLayoutComponent }          from './layouts/full-layout.component';
 import { SimpleLayoutComponent }        from './layouts/simple-layout.component';
-import { OrdersComponent } from './orders/orders.component';
+import { AuthenticationService }        from './authentication/authentication.service';
 
 @NgModule({
     imports: [
         BrowserModule,
         AppRoutingModule,
         Ng2BootstrapModule,
-        ChartsModule
+        ChartsModule,
+        HttpModule
     ],
     declarations: [
         AppComponent,
@@ -34,13 +37,15 @@ import { OrdersComponent } from './orders/orders.component';
         NAV_DROPDOWN_DIRECTIVES,
         BreadcrumbsComponent,
         SIDEBAR_TOGGLE_DIRECTIVES,
-        AsideToggleDirective,
-        OrdersComponent
+        AsideToggleDirective
     ],
-    providers: [{
+    providers: [
+      AuthenticationService,
+      {
         provide: LocationStrategy,
         useClass: HashLocationStrategy
-    }],
+      }
+    ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -6,20 +6,11 @@ import { Routes,
 import { FullLayoutComponent }      from './layouts/full-layout.component';
 import { SimpleLayoutComponent }    from './layouts/simple-layout.component';
 
-import { OrdersComponent }          from './orders/orders.component';
-
 export const routes: Routes = [
     {
         path: '',
         redirectTo: 'dashboard',
         pathMatch: 'full',
-    },
-    {
-        path: '',
-        component: OrdersComponent,
-        data: {
-          title: 'Orders'
-        }
     },
     {
         path: '',
@@ -31,6 +22,10 @@ export const routes: Routes = [
             {
                 path: 'dashboard',
                 loadChildren: 'app/dashboard/dashboard.module#DashboardModule'
+            },
+            {
+                path: 'orders',
+                loadChildren: 'app/orders/orders.module#OrdersModule'
             },
             {
                 path: 'components',
