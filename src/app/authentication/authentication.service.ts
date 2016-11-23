@@ -45,7 +45,7 @@ export class AuthenticationService {
           let defaultOptions: Angular2TokenOptions = {
               // apiPath:                    'https://nimbus-app.cfapps.io/api',
               // apiPath:                    'https://dev-nimbus.cfapps.io/api',
-              apiPath:                    'http://localhost:3000/admin',
+              apiPath:                    'http://localhost:3000/api/admin',
 
               signInPath:                 'auth/sign_in',
               signInRedirect:             null,
@@ -77,7 +77,7 @@ export class AuthenticationService {
       }
 
       // Register request
-      registerAccount(firstname: string, lastname: string, email: string, password: string, passwordConfirmation: string, userType?: string): Observable<Response> {
+      registerAccount(firstname: string, lastname: string, email: string, password: string, passwordConfirmation: string, retailer: number, role: string, userType?: string): Observable<Response> {
 
           if (userType == null)
               this._currentUserType = null;
@@ -90,6 +90,8 @@ export class AuthenticationService {
               email: email,
               password: password,
               password_confirmation: passwordConfirmation,
+              retailer_id: retailer,
+              role: role
           });
 
           return this.post(this._constructUserPath() + this._options.registerAccountPath, body);

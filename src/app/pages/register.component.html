@@ -5,26 +5,43 @@
                 <div class="card-block p-a-2">
                     <h1>Register</h1>
                     <p class="text-muted">Create your account</p>
-                    <div class="input-group m-b-1">
-                        <span class="input-group-addon"><i class="icon-user"></i>
-                        </span>
-                        <input type="text" class="form-control" placeholder="Username">
-                    </div>
-                    <div class="input-group m-b-1">
-                        <span class="input-group-addon">@</span>
-                        <input type="text" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="input-group m-b-1">
-                        <span class="input-group-addon"><i class="icon-lock"></i>
-                        </span>
-                        <input type="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="input-group m-b-2">
-                        <span class="input-group-addon"><i class="icon-lock"></i>
-                        </span>
-                        <input type="password" class="form-control" placeholder="Repeat password">
-                    </div>
-                    <button type="button" class="btn btn-block btn-success">Create Account</button>
+                    <form [formGroup]="signupForm" (ngSubmit)="signup()">
+                        <div class="input-group m-b-1">
+                            <span class="input-group-addon">
+                              <i class="icon-user"></i>
+                            </span>
+                            <input type="text" class="form-control" formControlName="first_name" placeholder="First name">
+                        </div>
+                        <div class="input-group m-b-1">
+                            <span class="input-group-addon">
+                              <i class="icon-user"></i>
+                            </span>
+                            <input type="text" class="form-control" formControlName="last_name" placeholder="Last name">
+                        </div>
+                        <div class="input-group m-b-1">
+                            <span class="input-group-addon">@</span>
+                            <input type="text" class="form-control" formControlName="email" placeholder="Email">
+                        </div>
+                        <div class="input-group m-b-1">
+                            <span class="input-group-addon">
+                              <i class="icon-lock"></i>
+                            </span>
+                            <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                        </div>
+                        <div class="input-group m-b-2">
+                            <span class="input-group-addon">
+                              <i class="icon-lock"></i>
+                            </span>
+                            <input type="password" class="form-control" formControlName="retailer" placeholder="Retailer">
+                        </div>
+                        <div class="input-group m-b-2">
+                            <span class="input-group-addon">
+                              <i class="icon-lock"></i>
+                            </span>
+                            <input type="password" class="form-control" formControlName="role" placeholder="Role">
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-block btn-success" (click)="signup()">Create Account</button>
                 </div>
                 <div class="card-footer p-a-2">
                     <div class="row">
