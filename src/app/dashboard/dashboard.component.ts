@@ -45,11 +45,11 @@ export class DashboardComponent implements OnInit {
     // lineChart1
     public lineChart1Data:Array<any> = [
         {
-            data: [65, 59, 84, 84, 51, 55, 40],
+            data: [65, 74, 100, 105, 133, 155, 240],
             label: 'Series A'
         }
     ];
-    public lineChart1Labels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    public lineChart1Labels:Array<any> = ['May', 'June', 'July', 'August', 'September', 'October', 'November'];
     public lineChart1Options:any = {
         maintainAspectRatio: false,
         scales: {
@@ -68,8 +68,8 @@ export class DashboardComponent implements OnInit {
                 display: false,
                 ticks: {
                     display: false,
-                    min: 40 - 5,
-                    max: 84 + 5,
+                    min: 65 - 5,
+                    max: 240 + 5,
                 }
             }],
         },
@@ -99,11 +99,11 @@ export class DashboardComponent implements OnInit {
     // lineChart2
     public lineChart2Data:Array<any> = [
         {
-            data: [1, 18, 9, 17, 34, 22, 11],
+            data: [1, 18, 9, 17, 34, 51, 66],
             label: 'Series A'
         }
     ];
-    public lineChart2Labels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    public lineChart2Labels:Array<any> = ['May', 'June', 'July', 'August', 'September', 'October', 'November'];
     public lineChart2Options:any = {
         maintainAspectRatio: false,
         scales: {
@@ -123,7 +123,7 @@ export class DashboardComponent implements OnInit {
                 ticks: {
                     display: false,
                     min: 1 - 5,
-                    max: 34 + 5,
+                    max: 66 + 5,
                 }
             }],
         },
@@ -155,11 +155,11 @@ export class DashboardComponent implements OnInit {
     // lineChart3
     public lineChart3Data:Array<any> = [
         {
-            data: [78, 81, 80, 45, 34, 12, 40],
+            data: [26, 27, 26, 30, 32, 34],
             label: 'Series A'
         }
     ];
-    public lineChart3Labels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    public lineChart3Labels:Array<any> = ['May', 'June', 'July', 'August', 'September', 'October', 'November'];
     public lineChart3Options:any = {
         maintainAspectRatio: false,
         scales: {
@@ -167,8 +167,13 @@ export class DashboardComponent implements OnInit {
                 display: false
             }],
             yAxes: [{
-                display: false
-            }]
+                display: false,
+                ticks: {
+                    display: false,
+                    min: 26 - 5,
+                    max: 34 + 5,
+                }
+              }]
         },
         elements: {
             line: {
@@ -197,11 +202,11 @@ export class DashboardComponent implements OnInit {
     // barChart1
     public barChart1Data:Array<any> = [
         {
-            data: [78, 81, 80, 45, 34, 12, 40, 78, 81, 80, 45, 34, 12, 40, 12, 40],
+            data: [18, 20, 21, 20, 23, 24],
             label: 'Series A'
         }
     ];
-    public barChart1Labels:Array<any> = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16'];
+    public barChart1Labels:Array<any> = ['May', 'June', 'July', 'August', 'September', 'October', 'November'];
     public barChart1Options:any = {
         maintainAspectRatio: false,
         scales: {
@@ -225,6 +230,90 @@ export class DashboardComponent implements OnInit {
     ];
     public barChart1Legend:boolean = false;
     public barChart1Type:string = 'bar';
+
+    public lineChart4Labels:Array<any> = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    public lineChart4Options:any = {
+        maintainAspectRatio: false,
+        scales: {
+            xAxes: [{
+                display: false
+            }],
+            yAxes: [{
+                display: false,
+                ticks: {
+                    display: false,
+                    min: 145 - 5,
+                    max: 4 + 5,
+                }
+              }]
+        },
+        elements: {
+            line: {
+                borderWidth: 2
+            },
+            point: {
+                radius: 0,
+                hitRadius: 10,
+                hoverRadius: 4,
+            },
+        },
+        legend: {
+            display: false
+        }
+    };
+
+    public lineChart4Data:Array<any> = [
+        {
+            data: [4, 18, 9, 17, 34, 22, 12, 40, 78, 81, 100, 145],
+            label: 'Series A'
+        }
+    ];
+    public lineChart4Colours:Array<any> = [
+        {
+            backgroundColor: 'transparent',
+            borderColor: 'rgba(255,255,255,.55)',
+            borderWidth: 2
+        }
+    ];
+    public lineChart4Legend:boolean = false;
+    public lineChart4Type:string = 'line';
+
+
+    // barChart2
+    public barChart2Data:Array<any> = [
+        {
+            data: [4, 18, 9, 17, 34, 22, 12, 40, 78, 81, 100, 145],
+            label: 'Series A'
+        }
+    ];
+    public barChart2Labels:Array<any> = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    public barChart2Options:any = {
+        maintainAspectRatio: false,
+        scales: {
+            xAxes: [{
+                display:false,
+                barPercentage: 0.6,
+            }],
+            yAxes: [{
+                display:false,
+                ticks: {
+                    beginAtZero: true,
+                }
+            }]
+        },
+        legend: {
+            display: false
+        }
+    };
+    public barChart2Colours:Array<any> = [
+        {
+            backgroundColor: 'rgba(0,0,0,.2)',
+            borderWidth: 0
+        }
+    ];
+    public barChart2Legend:boolean = false;
+    public barChart2Type:string = 'bar';
+
 
     // mainChart
 
@@ -271,7 +360,7 @@ export class DashboardComponent implements OnInit {
                     beginAtZero: true,
                     maxTicksLimit: 5,
                     stepSize: Math.ceil(250 / 5),
-                    max: 250
+                    max: 400
                 }
             }]
         },
@@ -312,159 +401,12 @@ export class DashboardComponent implements OnInit {
     public mainChartLegend:boolean = false;
     public mainChartType:string = 'line';
 
-    // social box charts
-
-    public socialChartData1:Array<any> = [
-        {
-            data: [65, 59, 84, 84, 51, 55, 40],
-            label: 'Facebook'
-        }
-    ];
-    public socialChartData2:Array<any> = [
-        {
-            data: [1, 13, 9, 17, 34, 41, 38],
-            label: 'Twitter'
-        }
-    ];
-    public socialChartData3:Array<any> = [
-        {
-            data: [78, 81, 80, 45, 34, 12, 40],
-            label: 'LinkedIn'
-        }
-    ];
-    public socialChartData4:Array<any> = [
-        {
-            data: [35, 23, 56, 22, 97, 23, 64],
-            label: 'Google+'
-        }
-    ];
-
-    public socialChartLabels:Array<any> = ['January','February','March','April','May','June','July'];
-    public socialChartOptions:any = {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-            xAxes: [{
-                display:false,
-            }],
-            yAxes: [{
-                display:false,
-            }]
-        },
-        elements: {
-            line: {
-                borderWidth: 2
-            },
-            point: {
-                radius: 0,
-                hitRadius: 10,
-                hoverRadius: 4,
-                hoverBorderWidth: 3,
-            }
-        },
-        legend: {
-            display: false
-        }
-    };
-    public socialChartColours:Array<any> = [
-        {
-            backgroundColor: 'rgba(255,255,255,.1)',
-            borderColor: 'rgba(255,255,255,.55)',
-            pointHoverBackgroundColor: '#fff'
-        }
-    ];
-    public socialChartLegend:boolean = false;
-    public socialChartType:string = 'line';
-
-    // sparkline charts
-
-    public sparklineChartData1:Array<any> = [
-        {
-            data: [35, 23, 56, 22, 97, 23, 64],
-            label: 'Clients'
-        }
-    ];
-    public sparklineChartData2:Array<any> = [
-        {
-            data: [65, 59, 84, 84, 51, 55, 40],
-            label: 'Clients'
-        }
-    ];
-
-    public sparklineChartLabels:Array<any> = ['January','February','March','April','May','June','July'];
-    public sparklineChartOptions:any = {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-            xAxes: [{
-                display:false,
-            }],
-            yAxes: [{
-                display:false,
-            }]
-        },
-        elements: {
-            line: {
-                borderWidth: 2
-            },
-            point: {
-                radius: 0,
-                hitRadius: 10,
-                hoverRadius: 4,
-                hoverBorderWidth: 3,
-            }
-        },
-        legend: {
-            display: false
-        }
-    };
-    public sparklineChartDefault:Array<any> = [
-        {
-            backgroundColor: 'transparent',
-            borderColor: '#d1d4d7',
-        }
-    ];
-    public sparklineChartPrimary:Array<any> = [
-        {
-            backgroundColor: 'transparent',
-            borderColor: this.brandPrimary,
-        }
-    ];
-    public sparklineChartInfo:Array<any> = [
-        {
-            backgroundColor: 'transparent',
-            borderColor: this.brandInfo,
-        }
-    ];
-    public sparklineChartDanger:Array<any> = [
-        {
-            backgroundColor: 'transparent',
-            borderColor: this.brandDanger,
-        }
-    ];
-    public sparklineChartWarning:Array<any> = [
-        {
-            backgroundColor: 'transparent',
-            borderColor: this.brandWarning,
-        }
-    ];
-    public sparklineChartSuccess:Array<any> = [
-        {
-            backgroundColor: 'transparent',
-            borderColor: this.brandSuccess,
-        }
-    ];
-
-
-    public sparklineChartLegend:boolean = false;
-    public sparklineChartType:string = 'line';
-
 
     ngOnInit(): void {
         //generate random values for mainChart
         for (var i = 0; i <= this.mainChartElements; i++) {
             this.mainChartData1.push(this.random(50,200));
-            this.mainChartData2.push(this.random(80,100));
+            this.mainChartData2.push(this.random(80,100) + 200);
             this.mainChartData3.push(65);
         }
     }

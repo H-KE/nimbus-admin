@@ -40,6 +40,14 @@ export const routes: Routes = [
                 loadChildren: 'app/widgets/widgets.module#WidgetsModule'
             },
             {
+                path: 'menu',
+                loadChildren: 'app/menu/menu.module#MenuModule'
+            },
+            {
+                path: 'analytics',
+                loadChildren: 'app/analytics/analytics.module#AnalyticsModule'
+            },
+            {
                 path: 'charts',
                 loadChildren: 'app/chartjs/chartjs.module#ChartJSModule'
             }
