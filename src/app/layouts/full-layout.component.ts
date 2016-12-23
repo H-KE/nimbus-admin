@@ -1,4 +1,6 @@
 import { Component, OnInit }            from '@angular/core';
+import { Router } from '@angular/router'
+import { AuthenticationService } from '../authentication/authentication.service'
 
 @Component({
     selector: 'app-dashboard',
@@ -6,7 +8,30 @@ import { Component, OnInit }            from '@angular/core';
 })
 export class FullLayoutComponent implements OnInit {
 
-    constructor() { }
+    user: any;
+    retailer: any;
+
+    constructor(public  auth: AuthenticationService,
+                private router: Router) {
+      this.user = {
+        role: 'NONE'
+      }
+    }
+
+    ngOnInit() {
+      this.auth.validateToken()
+          .map(response => response.json())
+          .subscribe(
+            user => {
+              this.user = user;
+              this.loadRetailer();
+              console.log(this.user);
+            },
+            error => {
+              this.router.navigate(['/pages/login']);
+            }
+          );
+    }
 
     public disabled:boolean = false;
     public status:{isopen:boolean} = {isopen: false};
@@ -21,5 +46,16 @@ export class FullLayoutComponent implements OnInit {
         this.status.isopen = !this.status.isopen;
     }
 
-    ngOnInit(): void {}
+    public loadRetailer() {
+        this.auth.get('retailer/' + this.user.retailer_id)
+            .map(response => response.json())
+            .subscribe(
+              retailer => {
+                this.retailer = retailer;
+              },
+              error => {
+                console.log(error);
+              }
+            )
+    }
 }

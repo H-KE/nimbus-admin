@@ -9,54 +9,53 @@
                     <table class="table table-hover table-outline m-b-0 hidden-sm-down">
                         <thead class="thead-default">
                             <tr>
-                                <th class="text-xs-center"><i class="icon-people"></i>
+                                <th class="text-xs-center">
+                                  <i class="icon-layers"></i>
                                 </th>
-                                <th>Invoice #</th>
-                                <th>Status</th>
-                                <th>Channel</th>
-                                <th>User</th>
-                                <th>Address</th>
-                                <th>Delivery Fee</th>
-                                <th>Tracking Number</th>
-                                <th>Carrier</th>
-                                <th>Payment Method</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>THC</th>
+                                <th>CBD</th>
+                                <th>Price Labels</th>
+                                <th>Prices</th>
+                                <th>Stock</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let order of Menu">
+                            <tr *ngFor="let product of menu">
                                 <td class="text-xs-center">
                                     <div class="avatar">
-                                        <img src="assets/img/avatars/1.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                                        <span class="avatar-status tag-success"></span>
+                                        <img src={{product.images[0]}} class="img-avatar" alt="admin@bootstrapmaster.com">
                                     </div>
                                 </td>
                                 <td>
-                                    <div>{{order.id}}</div>
-                                </td>
-                                <td class="text-xs-center">
-                                    <div>{{order.status}}</div>
+                                    <div>{{product.name}}</div>
                                 </td>
                                 <td>
-                                    <div>{{order.distribution_channel}}</div>
+                                    <div>{{product.description}}</div>
                                 </td>
                                 <td>
-                                    <div>Firstname Lastname</div>
+                                    <div>{{product.category}}</div>
                                 </td>
                                 <td>
-                                    <div class="small text-muted">{{order.address}}</div>
+                                    <div>{{product.thc}}</div>
                                 </td>
                                 <td>
-                                    <div>{{order.delivery_fee}}</div>
+                                    <div>{{product.cbd}}</div>
                                 </td>
                                 <td>
-                                    <div>{{order.tracking_number}}</div>
+                                    <div>{{product.price_labels}}</div>
                                 </td>
                                 <td>
-                                    <div>{{order.carrier_code}}</div>
+                                    <div>{{product.prices}}</div>
                                 </td>
                                 <td>
+                                    <div>{{product.stock}}</div>
+                                </td>
+                                <!-- <td>
                                   <img src="http://southrosedale.org/wp-content/uploads/2014/12/interac-email-transfer-logo.png" class="text-xs-center" height="40px">
-                                </td>
+                                </td> -->
                             </tr>
                             <!-- <tr>
                                 <td class="text-xs-center">

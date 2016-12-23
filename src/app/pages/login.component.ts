@@ -8,6 +8,7 @@ import { AuthenticationService } from '../authentication/authentication.service'
 })
 export class LoginComponent {
   loginForm: any;
+  user: any;
 
   constructor(public formBuilder: FormBuilder,
               private router: Router,

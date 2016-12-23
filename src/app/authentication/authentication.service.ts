@@ -43,9 +43,9 @@ export class AuthenticationService {
       init(options?: Angular2TokenOptions) {
 
           let defaultOptions: Angular2TokenOptions = {
-              apiPath:                    'https://nimbus-app.cfapps.io/api/admin',
+              // apiPath:                    'https://nimbus-app.cfapps.io/api/admin',
               // apiPath:                    'https://dev-nimbus.cfapps.io/api',
-              // apiPath:                    'http://localhost:3000/api/admin',
+              apiPath:                    'http://localhost:3000/api/admin',
 
               signInPath:                 'auth/sign_in',
               signInRedirect:             null,
@@ -117,7 +117,7 @@ export class AuthenticationService {
 
           let observ = this.post(this._constructUserPath() + this._options.signInPath, body);
 
-          observ.subscribe(res => this._currentUserData = res.json().data, error => null);
+          observ.subscribe(res => this._storeCurrentUserData(res.json().data), error => null);
 
           return observ;
       }
@@ -146,7 +146,7 @@ export class AuthenticationService {
       validateToken(): Observable<Response> {
           let observ = this.get(this._constructUserPath() + this._options.validateTokenPath);
 
-          observ.subscribe(res => this._currentUserData = res.json().data, error => null);
+          observ.subscribe(res => this._storeCurrentUserData(res.json().data), error => null);
 
           return observ;
       }
@@ -289,6 +289,19 @@ export class AuthenticationService {
 
           return response;
       }
+
+      public getCurrentUser() {
+          this._currentUserData = JSON.parse(localStorage.getItem('currentUser'));
+
+          return this._currentUserData;
+      }
+
+      public _storeCurrentUserData(userData) {
+          this._currentUserData = userData;
+
+          localStorage.setItem('currentUser', JSON.stringify(this._currentUserData));
+      }
+
 
       // Check if response is complete and newer, then update storage
       public _handleResponse(response: Observable<Response>) {
